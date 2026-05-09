@@ -125,18 +125,151 @@
 .form-note i{color:var(--bm);flex-shrink:0}
 
 /* ===== LINK GOOGLE FORM CARDS ===== */
-.pengajuan-links{background:var(--w);border-radius:var(--r14);padding:28px 32px;box-shadow:var(--sh);border:1px solid var(--g2);margin-bottom:30px}
-.pengajuan-links h3{font-size:1rem;font-weight:800;color:var(--bd);margin-bottom:6px;display:flex;align-items:center;gap:9px}
-.pengajuan-links h3 i{color:var(--bm)}
-.pengajuan-links>p{font-size:.85rem;color:var(--g5);margin-bottom:20px;line-height:1.6}
-.gform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.gform-card{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:var(--r10);border:2px solid var(--g2);background:var(--g0);transition:var(--tr);text-decoration:none;color:var(--g9)}
-.gform-card:hover{border-color:var(--bm);background:var(--bp);transform:translateY(-2px);box-shadow:0 4px 16px rgba(26,86,219,.12)}
-.gform-card-icon{width:44px;height:44px;border-radius:var(--r6);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--w);flex-shrink:0}
-.gform-card-text strong{display:block;font-size:.88rem;font-weight:700;color:var(--g9);margin-bottom:2px}
-.gform-card-text span{font-size:.75rem;color:var(--g5)}
-.gform-card-arrow{margin-left:auto;color:var(--g4);font-size:.85rem;transition:var(--tr)}
-.gform-card:hover .gform-card-arrow{color:var(--bm);transform:translateX(3px)}
+
+/* Section wrapper biru untuk pengajuan-links */
+.pengajuan-links {
+  background: linear-gradient(135deg, var(--bm) 0%, var(--bd) 100%);
+  border-radius: var(--r14);
+  padding: 32px;
+  margin-bottom: 30px;
+  color: var(--w);
+  box-shadow: 0 8px 32px rgba(26,86,219,.3);
+  position: relative;
+  overflow: hidden;
+}
+.pengajuan-links::before {
+  content: "";
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: rgba(255,255,255,.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.pengajuan-links h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--w);
+  position: relative;
+}
+.pengajuan-links h3 i { color: #93c5fd; }
+.pengajuan-links > p {
+  font-size: .88rem;
+  opacity: .88;
+  margin-bottom: 22px;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Grid kartu */
+.gform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 12px;
+  position: relative;
+}
+
+/* Kartu di dalam section biru (pengajuan-links) */
+.pengajuan-links .gform-card {
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--r10);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--w) !important;
+  text-decoration: none;
+  transition: var(--tr);
+}
+.pengajuan-links .gform-card:hover {
+  background: rgba(255,255,255,.26);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  border-color: rgba(255,255,255,.5);
+}
+/* Ikon di dalam section biru — override warna gradient dengan putih transparan */
+.pengajuan-links .gform-card .gform-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r6);
+  background: rgba(255,255,255,.22) !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: var(--w);
+  flex-shrink: 0;
+}
+.pengajuan-links .gform-card .gform-card-text strong {
+  display: block;
+  font-size: .86rem;
+  font-weight: 700;
+  color: var(--w);
+  margin-bottom: 2px;
+}
+.pengajuan-links .gform-card .gform-card-text span {
+  font-size: .73rem;
+  color: rgba(255,255,255,.78);
+}
+.pengajuan-links .gform-card .gform-card-arrow {
+  margin-left: auto;
+  color: rgba(255,255,255,.65);
+  font-size: .8rem;
+  transition: var(--tr);
+  flex-shrink: 0;
+}
+.pengajuan-links .gform-card:hover .gform-card-arrow {
+  color: var(--w);
+  transform: translateX(4px);
+}
+
+/* Kartu standalone (di luar section biru) */
+.gform-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--r10);
+  border: 2px solid var(--g2);
+  background: var(--w);
+  transition: var(--tr);
+  text-decoration: none;
+  color: var(--g9);
+}
+.gform-card:hover {
+  border-color: var(--bm);
+  background: var(--bp);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(26,86,219,.12);
+}
+.gform-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--w);
+  flex-shrink: 0;
+}
+/* Warna ikon per kategori — berlaku di kartu standalone */
+.icon-tidakwajib { background: linear-gradient(135deg,#7c3aed,#8b5cf6); box-shadow: 0 3px 10px rgba(124,58,237,.35); }
+.icon-rendah     { background: linear-gradient(135deg,#059669,#10b981); box-shadow: 0 3px 10px rgba(5,150,105,.35); }
+.icon-sedang     { background: linear-gradient(135deg,#d97706,#f59e0b); box-shadow: 0 3px 10px rgba(217,119,6,.35); }
+.icon-tinggi     { background: linear-gradient(135deg,#dc2626,#ef4444); box-shadow: 0 3px 10px rgba(220,38,38,.35); }
+.icon-umum       { background: linear-gradient(135deg,var(--bm),var(--bl)); box-shadow: var(--shb); }
+
+.gform-card-text strong { display: block; font-size: .88rem; font-weight: 700; color: var(--g9); margin-bottom: 2px; }
+.gform-card-text span   { font-size: .75rem; color: var(--g5); }
+.gform-card-arrow { margin-left: auto; color: var(--g4); font-size: .85rem; transition: var(--tr); flex-shrink: 0; }
+.gform-card:hover .gform-card-arrow { color: var(--bm); transform: translateX(3px); }
 
 /* ===== TOMBOL OUTLINE BIRU ===== */
 .btn-outline-blue {
@@ -177,6 +310,18 @@
   padding: 32px;
   margin-top: 40px;
   color: var(--w);
+  box-shadow: 0 8px 32px rgba(26,86,219,.3);
+  position: relative;
+  overflow: hidden;
+}
+.gforms-section::before {
+  content: "";
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 220px; height: 220px;
+  background: rgba(255,255,255,.05);
+  border-radius: 50%;
+  pointer-events: none;
 }
 .gforms-section h3 {
   font-size: 1.15rem;
@@ -185,64 +330,163 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
+.gforms-section h3 i { color: #93c5fd; }
 .gforms-section > p {
   font-size: .88rem;
   opacity: .88;
   margin-bottom: 22px;
   line-height: 1.6;
+  position: relative;
 }
-.gforms-section .gform-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
+/* Kartu di dalam gforms-section — sama seperti pengajuan-links */
 .gforms-section .gform-card {
-  background: rgba(255,255,255,.15);
+  background: rgba(255,255,255,.14);
   border: 1px solid rgba(255,255,255,.25);
   border-radius: var(--r10);
   padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--w);
+  color: var(--w) !important;
   text-decoration: none;
   transition: var(--tr);
-  backdrop-filter: blur(4px);
 }
 .gforms-section .gform-card:hover {
-  background: rgba(255,255,255,.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  background: rgba(255,255,255,.26);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  border-color: rgba(255,255,255,.5);
 }
-.gforms-section .gform-card-icon {
-  width: 40px;
-  height: 40px;
+.gforms-section .gform-card .gform-card-icon {
+  width: 42px;
+  height: 42px;
   border-radius: var(--r6);
-  background: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.22) !important;
+  box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  color: var(--w);
   flex-shrink: 0;
 }
-.gforms-section .gform-card-text strong {
-  display: block;
-  font-size: .86rem;
-  font-weight: 700;
-  margin-bottom: 2px;
+.gforms-section .gform-card .gform-card-text strong {
+  display: block; font-size: .86rem; font-weight: 700; color: var(--w); margin-bottom: 2px;
 }
-.gforms-section .gform-card-text span {
-  font-size: .73rem;
-  opacity: .8;
+.gforms-section .gform-card .gform-card-text span {
+  font-size: .73rem; color: rgba(255,255,255,.78);
 }
-.gforms-section .gform-card-arrow {
-  margin-left: auto;
-  opacity: .7;
-  font-size: .8rem;
-  transition: var(--tr);
+.gforms-section .gform-card .gform-card-arrow {
+  margin-left: auto; color: rgba(255,255,255,.65); font-size: .8rem; transition: var(--tr); flex-shrink: 0;
 }
 .gforms-section .gform-card:hover .gform-card-arrow {
-  opacity: 1;
-  transform: translateX(3px);
+  color: var(--w); transform: translateX(4px);
+}
+
+/* ===== MODAL BERITA ===== */
+.modal-berita-box {
+  background: var(--w);
+  border-radius: 16px;
+  max-width: 680px;
+  width: 95%;
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+  animation: popIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+.modal-berita-header {
+  padding: 28px 32px 22px;
+  color: var(--w);
+  position: relative;
+  flex-shrink: 0;
+}
+.modal-berita-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.modal-berita-meta .info-date {
+  font-size: .78rem;
+  color: rgba(255,255,255,.85);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.modal-berita-meta .info-tag {
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.22);
+  color: var(--w);
+  border: 1px solid rgba(255,255,255,.3);
+}
+.modal-berita-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  padding-right: 40px;
+}
+.modal-berita-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.3);
+  color: var(--w);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: var(--tr);
+}
+.modal-berita-close:hover {
+  background: rgba(255,255,255,.35);
+  transform: rotate(90deg);
+}
+.modal-berita-body {
+  padding: 28px 32px;
+  overflow-y: auto;
+  flex: 1;
+  font-size: .92rem;
+  color: var(--g7);
+  line-height: 1.75;
+}
+.modal-berita-body p {
+  margin-bottom: 14px;
+}
+.modal-berita-body ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+.modal-berita-body ul li {
+  margin-bottom: 7px;
+}
+.modal-berita-body strong {
+  color: var(--g9);
+  font-weight: 700;
+}
+/* Warna header modal per kategori */
+.modal-header-pengumuman { background: linear-gradient(135deg,#dc2626,#ef4444); }
+.modal-header-jadwal     { background: linear-gradient(135deg,var(--bm),var(--bl)); }
+.modal-header-regulasi   { background: linear-gradient(135deg,#7c3aed,#8b5cf6); }
+.modal-header-layanan    { background: linear-gradient(135deg,#059669,#10b981); }
+.modal-header-pelatihan  { background: linear-gradient(135deg,#d97706,#f59e0b); }
+.modal-header-kerjasama  { background: linear-gradient(135deg,var(--bn),var(--bm)); }
+
+@media(max-width:600px) {
+  .modal-berita-header { padding: 22px 20px 18px; }
+  .modal-berita-header h2 { font-size: 1.05rem; }
+  .modal-berita-body { padding: 20px; }
 }

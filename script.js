@@ -307,3 +307,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// ===== MODAL BERITA (info.html) =====
+var warnaPeta = {
+  'tag-pengumuman': 'modal-header-pengumuman',
+  'tag-jadwal':     'modal-header-jadwal',
+  'tag-regulasi':   'modal-header-regulasi',
+  'tag-layanan':    'modal-header-layanan',
+  'tag-pelatihan':  'modal-header-pelatihan',
+  'tag-kerjasama':  'modal-header-kerjasama'
+};
+
+function bukaBerita(e, id) {
+  e.preventDefault();
+  var data = document.getElementById(id);
+  if (!data) return;
+
+  var judul    = data.getAttribute('data-judul');
+  var tanggal  = data.getAttribute('data-tanggal');
+  var kategori = data.getAttribute('data-kategori');
+  var warna    = data.getAttribute('data-warna');
+  var isi      = data.getAttribute('data-isi');
+
+  var modal   = document.getElementById('modal-berita');
+  var header  = document.getElementById('modal-berita-header');
+  var meta    = document.getElementById('modal-berita-meta');
+  var judulEl = document.getElementById('modal-berita-judul');
+  var isiEl   = document.getElementById('modal-berita-isi');
+
+  // Set warna header
+  header.className = 'modal-berita-header ' + (warnaPeta[warna] || 'modal-header-jadwal');
+
+  // Set konten
+  meta.innerHTML =
+    '<span class="info-date"><i class="fas fa-calendar-days"></i> ' + tanggal + '</span>' +
+    '<span class="info-tag">' + kategori + '</span>';
+  judulEl.textContent = judul;
+  isiEl.innerHTML = isi;
+
+  // Tampilkan modal
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function tutupBerita() {
+  var modal = document.getElementById('modal-berita');
+  if (modal) {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
+// Tutup modal berita dengan ESC (tambahan ke listener yang sudah ada)
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      tutupBerita();
+      closeModal();
+    }
+  });
+});
