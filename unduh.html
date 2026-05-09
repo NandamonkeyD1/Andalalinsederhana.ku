@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Unduh Dokumen - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fas fa-phone"></i> (024) 692-1234</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fas fa-clock"></i> Senin-Jumat: 08.00-16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="header-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lambang_Kabupaten_Semarang.png/120px-Lambang_Kabupaten_Semarang.png" alt="Logo Kab. Semarang"/>
+      <div>
+        <div class="header-title">PORTAL ANDALALIN</div>
+        <div class="header-sub">Dinas Perhubungan Kabupaten Semarang</div>
+        <div class="header-tagline">Analisis Dampak Lalu Lintas</div>
+      </div>
+    </div>
+    <div class="header-badge"><i class="fas fa-shield-alt"></i> Layanan Resmi Pemerintah</div>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="info.html"><i class="fas fa-newspaper"></i> Info Terkini</a></li>
+      <li><a href="unduh.html" class="active"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-download"></i> Unduh Dokumen</h1>
+      <p>Unduh template dan pedoman dokumen yang diperlukan untuk pengajuan Andalalin</p>
+    </div>
+  </div>
+
+  <section class="section-wrap">
+    <div class="container">
+      <div class="unduh-list">
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+          <div class="unduh-info">
+            <h4>Pedoman Pengajuan Andalalin Bangkitan Tinggi</h4>
+            <p>Panduan lengkap persyaratan dan prosedur pengajuan untuk kategori bangkitan tinggi</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> PDF &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 2.4 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+          <div class="unduh-info">
+            <h4>Pedoman Pengajuan Andalalin Bangkitan Sedang</h4>
+            <p>Panduan lengkap persyaratan dan prosedur pengajuan untuk kategori bangkitan sedang</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> PDF &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 1.8 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+          <div class="unduh-info">
+            <h4>Pedoman Pengajuan Andalalin Bangkitan Rendah</h4>
+            <p>Panduan lengkap persyaratan dan prosedur pengajuan untuk kategori bangkitan rendah</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> PDF &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 1.5 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+          <div class="unduh-info">
+            <h4>Pedoman Pengajuan Surat Keterangan Tidak Wajib Andalalin</h4>
+            <p>Panduan pengajuan surat keterangan bagi kegiatan yang tidak memenuhi ambang batas wajib Andalalin</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> PDF &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 1.2 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Template Surat Permohonan Andalalin</h4>
+            <p>Template surat permohonan resmi yang dapat diisi dan disesuaikan oleh pemohon</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 0.3 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Draft Surat Kesanggupan Pemenuhan Syarat</h4>
+            <p>Template surat kesanggupan yang wajib diisi pemohon setelah pembahasan tim penilai</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 0.2 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-excel"><i class="fas fa-file-excel"></i></div>
+          <div class="unduh-info">
+            <h4>Formulir Checklist Kelengkapan Dokumen</h4>
+            <p>Daftar periksa kelengkapan dokumen sebelum pengajuan untuk memastikan berkas sudah lengkap</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> XLSX &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 0.4 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Draft Surat Permohonan Informasi Kriteria Wajib Andalalin</h4>
+            <p>Template surat permohonan informasi kriteria wajib Andalalin kepada Kepala Dinas Perhubungan</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX &nbsp;|&nbsp; <i class="fas fa-hard-drive"></i> 0.2 MB</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+      <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu Navigasi</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="info.html">Info Terkini</a></li>
+        <li><a href="unduh.html">Unduh Dokumen</a></li>
+        <li><a href="kriteria.html">Kriteria Andalalin</a></li>
+        <li><a href="pengajuan.html">Pengajuan Andalalin</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak Kami</h4>
+      <p><i class="fas fa-phone"></i> (024) 692-1234</p>
+      <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+      <p><i class="fab fa-whatsapp"></i> Admin: 0812-3456-7890</p>
+      <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Beranda - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fas fa-phone"></i> (024) 692-1234</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fas fa-clock"></i> Senin-Jumat: 08.00-16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="header-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lambang_Kabupaten_Semarang.png/120px-Lambang_Kabupaten_Semarang.png" alt="Logo Kab. Semarang"/>
+      <div>
+        <div class="header-title">PORTAL ANDALALIN</div>
+        <div class="header-sub">Dinas Perhubungan Kabupaten Semarang</div>
+        <div class="header-tagline">Analisis Dampak Lalu Lintas</div>
+      </div>
+    </div>
+    <div class="header-badge"><i class="fas fa-shield-alt"></i> Layanan Resmi Pemerintah</div>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="info.html"><i class="fas fa-newspaper"></i> Info Terkini</a></li>
+      <li><a href="unduh.html"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="hero-banner">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-road"></i> Portal Resmi Andalalin</div>
+        <h1>Selamat Datang di Portal ANDALALIN</h1>
+        <h2>Dinas Perhubungan Kabupaten Semarang</h2>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas yang efektif, efisien, dan transparan untuk mendukung pembangunan berkelanjutan di Kabupaten Semarang.</p>
+        <div class="hero-buttons">
+          <a href="pengajuan.html" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Sekarang</a>
+          <a href="kriteria.html" class="btn-outline"><i class="fas fa-info-circle"></i> Cek Kriteria</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><i class="fas fa-file-circle-check"></i><span class="stat-num">248</span><span class="stat-label">Pengajuan Diproses</span></div>
+        <div class="stat-card"><i class="fas fa-check-circle"></i><span class="stat-num">195</span><span class="stat-label">Rekomendasi Terbit</span></div>
+        <div class="stat-card"><i class="fas fa-clock"></i><span class="stat-num">14</span><span class="stat-label">Hari Rata-rata Proses</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALUR PELAYANAN -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fas fa-sitemap"></i> Alur Pelayanan Pengajuan Andalalin</h2>
+        <p>Ikuti langkah-langkah berikut untuk mengajukan permohonan Andalalin</p>
+      </div>
+      <div class="alur-steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-icon"><i class="fas fa-upload"></i></div>
+          <div class="step-text"><h4>Upload Dokumen</h4><p>Pemohon mengunggah dokumen permohonan melalui portal</p></div>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
+          <div class="step-text"><h4>Verifikasi Admin</h4><p>Admin memverifikasi kelengkapan dokumen permohonan</p></div>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-icon"><i class="fas fa-users"></i></div>
+          <div class="step-text"><h4>Pembahasan Tim</h4><p>Tim penilai melakukan pembahasan dan evaluasi teknis</p></div>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+          <div class="step-text"><h4>Berita Acara</h4><p>Admin mengunggah berita acara hasil pembahasan</p></div>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-icon"><i class="fas fa-pen-to-square"></i></div>
+          <div class="step-text"><h4>Surat Kesanggupan</h4><p>Pemohon mengunggah surat kesanggupan pemenuhan syarat</p></div>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-icon"><i class="fas fa-certificate"></i></div>
+          <div class="step-text"><h4>Rekomendasi</h4><p>Admin menerbitkan surat rekomendasi Andalalin</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="section-wrap bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fas fa-th-large"></i> Layanan Kami</h2>
+        <p>Pilih layanan yang sesuai dengan kebutuhan Anda</p>
+      </div>
+      <div class="layanan-grid">
+        <a href="pengajuan.html?form=tinggi" class="layanan-card">
+          <div class="layanan-icon icon-tinggi"><i class="fas fa-building"></i></div>
+          <h3>Bangkitan Tinggi</h3>
+          <p>Mall, hotel bintang 4-5, RS tipe A/B, kawasan industri, perguruan tinggi besar</p>
+          <span class="layanan-badge badge-tinggi">Wajib Andalalin</span>
+        </a>
+        <a href="pengajuan.html?form=sedang" class="layanan-card">
+          <div class="layanan-icon icon-sedang"><i class="fas fa-store"></i></div>
+          <h3>Bangkitan Sedang</h3>
+          <p>Ruko, hotel bintang 1-3, RS tipe C/D, sekolah, minimarket, kantor menengah</p>
+          <span class="layanan-badge badge-sedang">Wajib Andalalin</span>
+        </a>
+        <a href="pengajuan.html?form=rendah" class="layanan-card">
+          <div class="layanan-icon icon-rendah"><i class="fas fa-home"></i></div>
+          <h3>Bangkitan Rendah</h3>
+          <p>Perumahan kecil, warung, klinik, tempat ibadah kecil, bengkel kendaraan</p>
+          <span class="layanan-badge badge-rendah">Wajib Andalalin</span>
+        </a>
+        <a href="pengajuan.html?form=tidakwajib" class="layanan-card">
+          <div class="layanan-icon icon-tidakwajib"><i class="fas fa-circle-info"></i></div>
+          <h3>Tidak Wajib Andalalin</h3>
+          <p>Kegiatan di bawah ambang batas yang memerlukan surat keterangan resmi</p>
+          <span class="layanan-badge badge-tidakwajib">Surat Keterangan</span>
+        </a>
+        <a href="pengajuan.html?form=umum" class="layanan-card">
+          <div class="layanan-icon icon-umum"><i class="fas fa-file-alt"></i></div>
+          <h3>Pengajuan Umum</h3>
+          <p>Jenis kegiatan lain yang memerlukan kajian dampak lalu lintas secara umum</p>
+          <span class="layanan-badge badge-umum">Umum</span>
+        </a>
+      </div>
+
+      <!-- GOOGLE FORMS LINKS -->
+      <div class="gforms-section">
+        <h3><i class="fab fa-google"></i> Formulir Pengajuan Online</h3>
+        <p>Ajukan langsung melalui Google Forms sesuai kategori bangkitan kegiatan Anda. Klik kartu di bawah untuk membuka formulir.</p>
+        <div class="gform-grid">
+          <a href="https://forms.gle/auFGN3j7fLzXFLAq8" target="_blank" class="gform-card">
+            <div class="gform-card-icon"><i class="fas fa-circle-info"></i></div>
+            <div class="gform-card-text"><strong>Tidak Wajib Andalalin</strong><span>Surat Keterangan</span></div>
+            <i class="fas fa-arrow-right gform-card-arrow"></i>
+          </a>
+          <a href="https://forms.gle/JbmsUfnGykwioJqx5" target="_blank" class="gform-card">
+            <div class="gform-card-icon"><i class="fas fa-home"></i></div>
+            <div class="gform-card-text"><strong>Bangkitan Rendah</strong><span>Wajib Andalalin</span></div>
+            <i class="fas fa-arrow-right gform-card-arrow"></i>
+          </a>
+          <a href="https://forms.gle/3qqe38qCsqhMbhhW7" target="_blank" class="gform-card">
+            <div class="gform-card-icon"><i class="fas fa-store"></i></div>
+            <div class="gform-card-text"><strong>Bangkitan Sedang</strong><span>Wajib Andalalin</span></div>
+            <i class="fas fa-arrow-right gform-card-arrow"></i>
+          </a>
+          <a href="https://forms.gle/dCrBg6v6KddAtRvJ7" target="_blank" class="gform-card">
+            <div class="gform-card-icon"><i class="fas fa-building"></i></div>
+            <div class="gform-card-text"><strong>Bangkitan Tinggi</strong><span>Wajib Andalalin</span></div>
+            <i class="fas fa-arrow-right gform-card-arrow"></i>
+          </a>
+          <a href="https://forms.gle/CdkfuBHq7LzcGH7m8" target="_blank" class="gform-card">
+            <div class="gform-card-icon"><i class="fas fa-folder-open"></i></div>
+            <div class="gform-card-text"><strong>Contoh Berkas</strong><span>Referensi Dokumen</span></div>
+            <i class="fas fa-arrow-right gform-card-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+      <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu Navigasi</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="info.html">Info Terkini</a></li>
+        <li><a href="unduh.html">Unduh Dokumen</a></li>
+        <li><a href="kriteria.html">Kriteria Andalalin</a></li>
+        <li><a href="pengajuan.html">Pengajuan Andalalin</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak Kami</h4>
+      <p><i class="fas fa-phone"></i> (024) 692-1234</p>
+      <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+      <p><i class="fab fa-whatsapp"></i> Admin: 0812-3456-7890</p>
+      <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
