@@ -11,32 +11,20 @@
 
 <div class="topbar">
   <div class="container">
-    <span><i class="fas fa-phone"></i> (024) 692-1234</span>
+    <span><i class="fab fa-whatsapp"></i> 085229403458</span>
     <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
-    <span><i class="fas fa-clock"></i> Senin-Jumat: 08.00-16.00 WIB</span>
+    <span><i class="fab fa-instagram"></i> @dishubkabsemarang</span>
+    <span><i class="fas fa-clock"></i> Senin–Jumat: 08.00–16.00 WIB</span>
   </div>
 </div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="header-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lambang_Kabupaten_Semarang.png/120px-Lambang_Kabupaten_Semarang.png" alt="Logo Kab. Semarang"/>
-      <div>
-        <div class="header-title">PORTAL ANDALALIN</div>
-        <div class="header-sub">Dinas Perhubungan Kabupaten Semarang</div>
-        <div class="header-tagline">Analisis Dampak Lalu Lintas</div>
-      </div>
-    </div>
-    <div class="header-badge"><i class="fas fa-shield-alt"></i> Layanan Resmi Pemerintah</div>
-  </div>
-</header>
+<header class="site-header"><div class="header-inner"><div class="header-logo"><img src="banner.jpeg" alt="Dinas Perhubungan Kabupaten Semarang" class="header-banner-img"/></div></div></header>
 
 <nav class="navbar">
   <div class="container nav-inner">
     <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
-      <li><a href="info.html"><i class="fas fa-newspaper"></i> Info Terkini</a></li>
       <li><a href="unduh.html"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
       <li><a href="kriteria.html" class="active"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
       <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
@@ -55,62 +43,67 @@
   <section class="section-wrap">
     <div class="container">
 
-      <!-- SIMULASI CEK KATEGORI -->
-      <div class="simulasi-wrap">
-        <h3><i class="fas fa-calculator"></i> Cek Kategori Bangkitan Andalalin</h3>
-        <p>Masukkan jenis rencana pembangunan dan ukurannya untuk mengetahui kategori bangkitan yang berlaku.</p>
-        <div class="simulasi-row">
-          <div class="simulasi-group">
-            <label><i class="fas fa-building"></i> Jenis Rencana Pembangunan</label>
-            <select id="sim-jenis">
-              <option value="">-- Pilih Jenis Pembangunan --</option>
-              <option value="mall">Pusat Perbelanjaan / Mall</option>
-              <option value="hotel">Hotel</option>
-              <option value="rs">Rumah Sakit</option>
-              <option value="industri">Kawasan Industri</option>
-              <option value="kampus">Perguruan Tinggi</option>
-              <option value="terminal">Terminal / Stasiun</option>
-              <option value="kantor">Gedung Perkantoran</option>
-              <option value="apartemen">Apartemen / Kondominium</option>
-              <option value="sekolah">Sekolah / Madrasah</option>
-              <option value="minimarket">Minimarket / Supermarket</option>
-              <option value="perumahan">Perumahan</option>
-              <option value="spbu">SPBU / SPBG</option>
-              <option value="klinik">Klinik / Puskesmas</option>
-              <option value="ibadah">Tempat Ibadah</option>
-              <option value="bengkel">Bengkel Kendaraan</option>
-              <option value="restoran">Restoran / Rumah Makan</option>
-              <option value="warung">Warung / Toko Kecil</option>
-              <option value="ruko">Ruko</option>
-            </select>
-          </div>
-          <div class="simulasi-group">
-            <label><i class="fas fa-ruler"></i> Ukuran / Jumlah</label>
-            <input type="number" id="sim-ukuran" placeholder="Masukkan angka ukuran" min="0"/>
-          </div>
-          <button class="btn-simulasi" onclick="cekKategori()"><i class="fas fa-search"></i> Cek Kategori</button>
-        </div>
-
-        <div id="simulasi-result" class="simulasi-result">
-          <div class="result-header">
-            <i id="res-icon" class="fas fa-info-circle"></i>
-            <div>
-              <h4 id="res-title">Kategori Bangkitan</h4>
-              <p id="res-subtitle">Hasil analisis berdasarkan data yang dimasukkan</p>
-            </div>
-          </div>
-          <div class="result-body">
-            <p id="res-desc"></p>
-            <div class="result-actions" id="res-actions"></div>
-          </div>
-        </div>
-      </div>
-
       <div class="kriteria-info-box">
         <i class="fas fa-circle-info"></i>
         <p>Berdasarkan <strong>Peraturan Menteri Perhubungan No. 17 Tahun 2021</strong> tentang Penyelenggaraan Analisis Dampak Lalu Lintas. Kegiatan yang memenuhi ambang batas wajib menyusun dokumen Andalalin sebelum memperoleh izin pembangunan.</p>
       </div>
 
+      <!-- CEK KATEGORI BANGKITAN - BOYOLALI STYLE (3 dropdown) -->
+      <div class="simulasi-wrap">
+        <h3><i class="fas fa-flag-checkered"></i> Cek Kategori Bangkitan</h3>
+
+        <!-- Dropdown 1: Kategori Utama -->
+        <div class="sim-row">
+          <div class="simulasi-group">
+            <select id="sim-kat1" onchange="onKat1Change()">
+              <option value="">Jenis Rencana Pembangunan</option>
+              <option value="pusat_kegiatan">Pusat Kegiatan</option>
+              <option value="permukiman">Permukiman</option>
+              <option value="infrastruktur">Infrastruktur</option>
+              <option value="pendidikan">Fasilitas Pendidikan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Sub-jenis (muncul setelah pilih kategori) -->
+        <div class="sim-row" id="sim-row2" style="display:none;">
+          <div class="simulasi-group">
+            <select id="sim-kat2" onchange="onKat2Change()">
+              <option value="">Jenis Rencana Pembangunan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: Ukuran Minimal (muncul setelah pilih sub-jenis) -->
+        <div class="sim-row" id="sim-row3" style="display:none;">
+          <div class="simulasi-group">
+            <select id="sim-ukuran-select" onchange="onUkuranChange()">
+              <option value="">Ukuran Minimal</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tabel Hasil -->
+        <div id="sim-tabel-result" class="sim-tabel-result" style="display:none;">
+          <div class="sim-tabel-header">KATEGORI BANGKITAN</div>
+          <table class="sim-tabel">
+            <tr>
+              <th>JENIS RENCANA PEMBANGUNAN</th>
+              <td id="tbl-jenis">-</td>
+            </tr>
+            <tr>
+              <th>UKURAN MINIMAL</th>
+              <td id="tbl-ukuran">-</td>
+            </tr>
+            <tr>
+              <th>KATEGORI BANGKITAN</th>
+              <td id="tbl-kategori">-</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- TABEL KRITERIA LENGKAP -->
       <div class="kriteria-tabs">
         <button class="ktab active" onclick="switchKriteria(this,'ktinggi')"><i class="fas fa-building"></i> Bangkitan Tinggi</button>
         <button class="ktab" onclick="switchKriteria(this,'ksedang')"><i class="fas fa-store"></i> Bangkitan Sedang</button>
@@ -119,70 +112,76 @@
       </div>
 
       <div id="ktinggi" class="kriteria-panel active">
-        <div class="panel-badge badge-tinggi"><i class="fas fa-building"></i> Bangkitan Tinggi</div>
+        <div class="panel-badge badge-tinggi"><i class="fas fa-building"></i> Bangkitan Tinggi — Wajib Menyusun Dokumen Andalalin</div>
         <div class="table-wrap">
           <table class="kriteria-table">
-            <thead><tr><th>No</th><th>Jenis Kegiatan</th><th>Ambang Batas</th><th>Satuan</th></tr></thead>
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
             <tbody>
-              <tr><td>1</td><td>Pusat Perbelanjaan / Mall</td><td>&ge; 10.000</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>2</td><td>Hotel Bintang 4 &amp; 5</td><td>&ge; 200</td><td>kamar</td></tr>
-              <tr><td>3</td><td>Rumah Sakit Tipe A &amp; B</td><td>&ge; 200</td><td>tempat tidur</td></tr>
-              <tr><td>4</td><td>Kawasan Industri</td><td>&ge; 100</td><td>ha luas kawasan</td></tr>
-              <tr><td>5</td><td>Perguruan Tinggi</td><td>&ge; 5.000</td><td>mahasiswa</td></tr>
-              <tr><td>6</td><td>Terminal / Stasiun</td><td>&ge; 500</td><td>penumpang/jam</td></tr>
-              <tr><td>7</td><td>Gedung Perkantoran</td><td>&ge; 20.000</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>8</td><td>Apartemen / Kondominium</td><td>&ge; 500</td><td>unit</td></tr>
+              <tr><td rowspan="2">1</td><td rowspan="2">Pusat Kegiatan<br><small>a. Kegiatan perdagangan dan perbelanjaan</small></td><td>Di atas 3.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>1.001 m² s.d. 3.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>500 m² s.d. 1.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td rowspan="2">2</td><td rowspan="2">Pusat Kegiatan<br><small>b. Kegiatan perkantoran</small></td><td>Di atas 10.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>4.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>1.000 m² s.d. 4.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td rowspan="2">3</td><td rowspan="2">Pusat Kegiatan<br><small>c. Industri</small></td><td>Di atas 10.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>5.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>2.500 m² s.d. 5.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>d. Kawasan Pariwisata</small></td><td>Wajib</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td rowspan="2">5</td><td rowspan="2">Pusat Kegiatan<br><small>d. Tempat Wisata</small></td><td>Di atas 10,0 hektar luas lahan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>5,0 s.d. 10,0 hektar luas lahan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>1,0 s.d. 5,0 hektar luas lahan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>Di atas 1.500 siswa</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
             </tbody>
           </table>
         </div>
         <div class="kriteria-cta">
-          <a href="https://forms.gle/dCrBg6v6KddAtRvJ7" target="_blank" class="btn-primary"><i class="fab fa-google"></i> Ajukan via Google Forms</a>
-          <a href="pengajuan.html?form=tinggi" class="btn-outline-blue"><i class="fas fa-file-alt"></i> Isi Form Manual</a>
+          <a href="pengajuan.html?form=tinggi" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Tinggi</a>
         </div>
       </div>
 
       <div id="ksedang" class="kriteria-panel">
-        <div class="panel-badge badge-sedang"><i class="fas fa-store"></i> Bangkitan Sedang</div>
+        <div class="panel-badge badge-sedang"><i class="fas fa-store"></i> Bangkitan Sedang — Wajib Menyusun Rekomendasi Teknis</div>
         <div class="table-wrap">
           <table class="kriteria-table">
-            <thead><tr><th>No</th><th>Jenis Kegiatan</th><th>Ambang Batas</th><th>Satuan</th></tr></thead>
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
             <tbody>
-              <tr><td>1</td><td>Pusat Perbelanjaan / Ruko</td><td>3.000 - 9.999</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>2</td><td>Hotel Bintang 1, 2 &amp; 3</td><td>50 - 199</td><td>kamar</td></tr>
-              <tr><td>3</td><td>Rumah Sakit Tipe C &amp; D</td><td>50 - 199</td><td>tempat tidur</td></tr>
-              <tr><td>4</td><td>Sekolah / Madrasah</td><td>500 - 4.999</td><td>siswa</td></tr>
-              <tr><td>5</td><td>Minimarket / Supermarket</td><td>500 - 2.999</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>6</td><td>Gedung Perkantoran</td><td>5.000 - 19.999</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>7</td><td>Perumahan Menengah</td><td>100 - 499</td><td>unit</td></tr>
-              <tr><td>8</td><td>SPBU / SPBG</td><td>4 - 7</td><td>nozzle</td></tr>
+              <tr><td>1</td><td>Pusat Kegiatan<br><small>a. Kegiatan perdagangan dan perbelanjaan</small></td><td>1.001 m² s.d. 3.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>2</td><td>Pusat Kegiatan<br><small>b. Kegiatan perkantoran</small></td><td>4.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>3</td><td>Pusat Kegiatan<br><small>c. Industri</small></td><td>5.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>c. Pergudangan</small></td><td>170.001 m² s.d. 500.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>5</td><td>Pusat Kegiatan<br><small>d. Tempat Wisata</small></td><td>5,0 s.d. 10,0 hektar luas lahan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>500 s.d. 1.500 siswa</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
             </tbody>
           </table>
         </div>
         <div class="kriteria-cta">
-          <a href="https://forms.gle/3qqe38qCsqhMbhhW7" target="_blank" class="btn-primary"><i class="fab fa-google"></i> Ajukan via Google Forms</a>
-          <a href="pengajuan.html?form=sedang" class="btn-outline-blue"><i class="fas fa-file-alt"></i> Isi Form Manual</a>
+          <a href="pengajuan.html?form=sedang" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Sedang</a>
         </div>
       </div>
 
       <div id="krendah" class="kriteria-panel">
-        <div class="panel-badge badge-rendah"><i class="fas fa-home"></i> Bangkitan Rendah</div>
+        <div class="panel-badge badge-rendah"><i class="fas fa-home"></i> Bangkitan Rendah — Wajib Menyusun Standar Teknis</div>
         <div class="table-wrap">
           <table class="kriteria-table">
-            <thead><tr><th>No</th><th>Jenis Kegiatan</th><th>Ambang Batas</th><th>Satuan</th></tr></thead>
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
             <tbody>
-              <tr><td>1</td><td>Perumahan Sederhana</td><td>50 - 99</td><td>unit</td></tr>
-              <tr><td>2</td><td>Warung / Toko Kecil</td><td>100 - 499</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>3</td><td>Klinik / Puskesmas</td><td>10 - 49</td><td>tempat tidur</td></tr>
-              <tr><td>4</td><td>Tempat Ibadah</td><td>500 - 1.999</td><td>jemaah</td></tr>
-              <tr><td>5</td><td>Bengkel Kendaraan</td><td>500 - 1.999</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>6</td><td>Restoran / Rumah Makan</td><td>100 - 499</td><td>m&sup2; luas lantai</td></tr>
-              <tr><td>7</td><td>SPBU Kecil</td><td>1 - 3</td><td>nozzle</td></tr>
+              <tr><td>1</td><td>Pusat Kegiatan<br><small>a. Kegiatan perdagangan dan perbelanjaan</small></td><td>500 m² s.d. 1.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>2</td><td>Pusat Kegiatan<br><small>b. Kegiatan perkantoran</small></td><td>1.000 m² s.d. 4.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>3</td><td>Pusat Kegiatan<br><small>c. Industri</small></td><td>2.500 m² s.d. 5.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>c. Pergudangan</small></td><td>40.000 m² s.d. 170.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>5</td><td>Pusat Kegiatan<br><small>d. Tempat Wisata</small></td><td>1,0 s.d. 5,0 hektar luas lahan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>100 s.d. 500 siswa</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
             </tbody>
           </table>
         </div>
         <div class="kriteria-cta">
-          <a href="https://forms.gle/JbmsUfnGykwioJqx5" target="_blank" class="btn-primary"><i class="fab fa-google"></i> Ajukan via Google Forms</a>
-          <a href="pengajuan.html?form=rendah" class="btn-outline-blue"><i class="fas fa-file-alt"></i> Isi Form Manual</a>
+          <a href="pengajuan.html?form=rendah" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Rendah</a>
         </div>
       </div>
 
@@ -190,23 +189,24 @@
         <div class="panel-badge badge-tidakwajib"><i class="fas fa-circle-info"></i> Tidak Wajib Andalalin</div>
         <div class="table-wrap">
           <table class="kriteria-table">
-            <thead><tr><th>No</th><th>Jenis Kegiatan</th><th>Skala</th><th>Keterangan</th></tr></thead>
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Skala</th><th>Keterangan</th></tr>
+            </thead>
             <tbody>
-              <tr><td>1</td><td>Rumah Tinggal Tunggal</td><td>1 - 49 unit</td><td>Dapat mengajukan Surat Keterangan</td></tr>
-              <tr><td>2</td><td>Warung / Kios Kecil</td><td>&lt; 100 m&sup2;</td><td>Dapat mengajukan Surat Keterangan</td></tr>
-              <tr><td>3</td><td>Tempat Ibadah Kecil</td><td>&lt; 500 jemaah</td><td>Dapat mengajukan Surat Keterangan</td></tr>
-              <tr><td>4</td><td>Kantor Kecil</td><td>&lt; 500 m&sup2;</td><td>Dapat mengajukan Surat Keterangan</td></tr>
-              <tr><td>5</td><td>Fasilitas Sosial Kecil</td><td>Skala RT/RW</td><td>Dapat mengajukan Surat Keterangan</td></tr>
+              <tr><td>1</td><td>Kegiatan perdagangan dan perbelanjaan</td><td>&lt; 500 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>2</td><td>Kegiatan perkantoran</td><td>&lt; 1.000 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>3</td><td>Industri / Pergudangan</td><td>&lt; 2.500 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>4</td><td>Tempat Wisata</td><td>&lt; 1,0 hektar luas lahan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>5</td><td>Sekolah / Universitas</td><td>&lt; 100 siswa</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
             </tbody>
           </table>
         </div>
         <div class="tidakwajib-note">
           <i class="fas fa-lightbulb"></i>
-          <p>Kegiatan yang tidak wajib Andalalin tetap dapat mengajukan <strong>Surat Keterangan Kriteria Wajib Andalalin</strong> kepada Kepala Dinas Perhubungan Kabupaten Semarang sebagai bukti bahwa kegiatan tersebut tidak memenuhi ambang batas kewajiban Andalalin.</p>
+          <p>Kegiatan yang tidak wajib Andalalin tetap dapat mengajukan <strong>Surat Permohonan Kriteria Wajib Andalalin</strong> yang ditujukan kepada Kepala Dinas Perhubungan Kabupaten Semarang. Untuk draft dan persyaratan dapat mengunduh di menu <a href="unduh.html" style="color:inherit;font-weight:700;text-decoration:underline;">Unduh Dokumen</a>.</p>
         </div>
         <div class="kriteria-cta">
-          <a href="https://forms.gle/auFGN3j7fLzXFLAq8" target="_blank" class="btn-primary"><i class="fab fa-google"></i> Ajukan via Google Forms</a>
-          <a href="pengajuan.html?form=tidakwajib" class="btn-outline-blue"><i class="fas fa-file-alt"></i> Isi Form Manual</a>
+          <a href="pengajuan.html?form=tidakwajib" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Surat Keterangan</a>
         </div>
       </div>
 
@@ -215,31 +215,32 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-col">
-      <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
-      <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+  <div class="footer-bg-img">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="unduh.html"><i class="fas fa-chevron-right"></i> Unduh Dokumen</a></li>
+          <li><a href="kriteria.html"><i class="fas fa-chevron-right"></i> Kriteria Andalalin</a></li>
+          <li><a href="pengajuan.html"><i class="fas fa-chevron-right"></i> Pengajuan Andalalin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+        <p><i class="fab fa-whatsapp"></i> 085229403458</p>
+        <p><i class="fab fa-instagram"></i> @dishubkabsemarang</p>
+        <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Menu Navigasi</h4>
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="info.html">Info Terkini</a></li>
-        <li><a href="unduh.html">Unduh Dokumen</a></li>
-        <li><a href="kriteria.html">Kriteria Andalalin</a></li>
-        <li><a href="pengajuan.html">Pengajuan Andalalin</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
     </div>
-    <div class="footer-col">
-      <h4>Kontak Kami</h4>
-      <p><i class="fas fa-phone"></i> (024) 692-1234</p>
-      <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
-      <p><i class="fab fa-whatsapp"></i> Admin: 0812-3456-7890</p>
-      <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
   </div>
 </footer>
 
