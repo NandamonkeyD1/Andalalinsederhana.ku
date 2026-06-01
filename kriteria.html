@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Kriteria Andalalin - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fab fa-whatsapp"></i> +62 815-4893-8862</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fab fa-instagram"></i> @dishubkabsemarang</span>
+    <span><i class="fas fa-clock"></i> Senin–Jumat: 08.00–16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header"><div class="header-inner"><div class="header-logo"><img src="banner.jpeg" alt="Dinas Perhubungan Kabupaten Semarang" class="header-banner-img"/></div></div></header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="unduh.html"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html" class="active"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-list-check"></i> Kriteria Andalalin</h1>
+      <p>Ketentuan ambang batas kewajiban Andalalin berdasarkan jenis dan skala kegiatan</p>
+    </div>
+  </div>
+
+  <section class="section-wrap">
+    <div class="container">
+
+      <div class="kriteria-info-box">
+        <i class="fas fa-circle-info"></i>
+        <p>Berdasarkan <strong>Peraturan Menteri Perhubungan No. 17 Tahun 2021</strong> tentang Penyelenggaraan Analisis Dampak Lalu Lintas. Kegiatan yang memenuhi ambang batas wajib menyusun dokumen Andalalin sebelum memperoleh izin pembangunan.</p>
+      </div>
+
+      <!-- CEK KATEGORI BANGKITAN - BOYOLALI STYLE (3 dropdown) -->
+      <div class="simulasi-wrap">
+        <h3><i class="fas fa-flag-checkered"></i> Cek Kategori Bangkitan</h3>
+
+        <!-- Dropdown 1: Kategori Utama -->
+        <div class="sim-row">
+          <div class="simulasi-group">
+            <select id="sim-kat1" onchange="onKat1Change()">
+              <option value="">Jenis Rencana Pembangunan</option>
+              <option value="pusat_kegiatan">Pusat Kegiatan</option>
+              <option value="permukiman">Permukiman</option>
+              <option value="infrastruktur">Infrastruktur</option>
+              <option value="pendidikan">Fasilitas Pendidikan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Sub-jenis (muncul setelah pilih kategori) -->
+        <div class="sim-row" id="sim-row2" style="display:none;">
+          <div class="simulasi-group">
+            <select id="sim-kat2" onchange="onKat2Change()">
+              <option value="">Jenis Rencana Pembangunan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: Ukuran Minimal (muncul setelah pilih sub-jenis) -->
+        <div class="sim-row" id="sim-row3" style="display:none;">
+          <div class="simulasi-group">
+            <select id="sim-ukuran-select" onchange="onUkuranChange()">
+              <option value="">Ukuran Minimal</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tabel Hasil -->
+        <div id="sim-tabel-result" class="sim-tabel-result" style="display:none;">
+          <div class="sim-tabel-header">KATEGORI BANGKITAN</div>
+          <table class="sim-tabel">
+            <tr>
+              <th>JENIS RENCANA PEMBANGUNAN</th>
+              <td id="tbl-jenis">-</td>
+            </tr>
+            <tr>
+              <th>UKURAN MINIMAL</th>
+              <td id="tbl-ukuran">-</td>
+            </tr>
+            <tr>
+              <th>KATEGORI BANGKITAN</th>
+              <td id="tbl-kategori">-</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- TABEL KRITERIA LENGKAP -->
+      <div class="kriteria-tabs">
+        <button class="ktab active" onclick="switchKriteria(this,'ktinggi')"><i class="fas fa-building"></i> Bangkitan Tinggi</button>
+        <button class="ktab" onclick="switchKriteria(this,'ksedang')"><i class="fas fa-store"></i> Bangkitan Sedang</button>
+        <button class="ktab" onclick="switchKriteria(this,'krendah')"><i class="fas fa-home"></i> Bangkitan Rendah</button>
+        <button class="ktab" onclick="switchKriteria(this,'ktidakwajib')"><i class="fas fa-circle-info"></i> Tidak Wajib</button>
+      </div>
+
+      <div id="ktinggi" class="kriteria-panel active">
+        <div class="panel-badge badge-tinggi"><i class="fas fa-building"></i> Bangkitan Tinggi — Wajib Menyusun Dokumen Andalalin</div>
+        <div class="table-wrap">
+          <table class="kriteria-table">
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="2">1</td><td rowspan="2">Pusat Kegiatan<br><small>Kegiatan perdagangan dan perbelanjaan</small></td><td>Di atas 3.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>1.001 m² s.d. 3.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>500 m² s.d. 1.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td rowspan="2">2</td><td rowspan="2">Pusat Kegiatan<br><small>Kegiatan perkantoran</small></td><td>Di atas 10.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>4.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>1.000 m² s.d. 4.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td rowspan="2">3</td><td rowspan="2">Pusat Kegiatan<br><small>Industri</small></td><td>Di atas 10.000 m² luas lantai bangunan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>5.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>2.500 m² s.d. 5.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>Kawasan Pariwisata</small></td><td>Wajib</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td rowspan="2">5</td><td rowspan="2">Pusat Kegiatan<br><small>Tempat Wisata</small></td><td>Di atas 10,0 hektar luas lahan</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+              <tr><td>5,0 s.d. 10,0 hektar luas lahan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td></td><td></td><td>1,0 s.d. 5,0 hektar luas lahan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>Di atas 1.500 siswa</td><td>Bangkitan Tinggi (Dokumen Andalalin)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kriteria-cta">
+          <a href="pengajuan.html?form=tinggi" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Tinggi</a>
+        </div>
+      </div>
+
+      <div id="ksedang" class="kriteria-panel">
+        <div class="panel-badge badge-sedang"><i class="fas fa-store"></i> Bangkitan Sedang — Wajib Menyusun Rekomendasi Teknis</div>
+        <div class="table-wrap">
+          <table class="kriteria-table">
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Pusat Kegiatan<br><small>Kegiatan perdagangan dan perbelanjaan</small></td><td>1.001 m² s.d. 3.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>2</td><td>Pusat Kegiatan<br><small>Kegiatan perkantoran</small></td><td>4.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>3</td><td>Pusat Kegiatan<br><small>Industri</small></td><td>5.001 m² s.d. 10.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>Pergudangan</small></td><td>170.001 m² s.d. 500.000 m² luas lantai bangunan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>5</td><td>Pusat Kegiatan<br><small>Tempat Wisata</small></td><td>5,0 s.d. 10,0 hektar luas lahan</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>500 s.d. 1.500 siswa</td><td>Bangkitan Sedang (Rekomendasi Teknis)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kriteria-cta">
+          <a href="pengajuan.html?form=sedang" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Sedang</a>
+        </div>
+      </div>
+
+      <div id="krendah" class="kriteria-panel">
+        <div class="panel-badge badge-rendah"><i class="fas fa-home"></i> Bangkitan Rendah — Wajib Menyusun Standar Teknis</div>
+        <div class="table-wrap">
+          <table class="kriteria-table">
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Ukuran Minimal</th><th>Kategori Bangkitan Lalu Lintas</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Pusat Kegiatan<br><small>Kegiatan perdagangan dan perbelanjaan</small></td><td>500 m² s.d. 1.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>2</td><td>Pusat Kegiatan<br><small>Kegiatan perkantoran</small></td><td>1.000 m² s.d. 4.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>3</td><td>Pusat Kegiatan<br><small>Industri</small></td><td>2.500 m² s.d. 5.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>4</td><td>Pusat Kegiatan<br><small>Pergudangan</small></td><td>40.000 m² s.d. 170.000 m² luas lantai bangunan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>5</td><td>Pusat Kegiatan<br><small>Tempat Wisata</small></td><td>1,0 s.d. 5,0 hektar luas lahan</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+              <tr><td>6</td><td>Fasilitas Pendidikan<br><small>Sekolah/Universitas</small></td><td>100 s.d. 500 siswa</td><td>Bangkitan Rendah (Standar Teknis)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kriteria-cta">
+          <a href="pengajuan.html?form=rendah" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Andalalin Bangkitan Rendah</a>
+        </div>
+      </div>
+
+      <div id="ktidakwajib" class="kriteria-panel">
+        <div class="panel-badge badge-tidakwajib"><i class="fas fa-circle-info"></i> Tidak Wajib Andalalin</div>
+        <div class="table-wrap">
+          <table class="kriteria-table">
+            <thead>
+              <tr><th>No</th><th>Jenis Rencana Pembangunan</th><th>Skala</th><th>Keterangan</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Kegiatan perdagangan dan perbelanjaan</td><td>&lt; 500 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>2</td><td>Kegiatan perkantoran</td><td>&lt; 1.000 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>3</td><td>Industri / Pergudangan</td><td>&lt; 2.500 m² luas lantai bangunan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>4</td><td>Tempat Wisata</td><td>&lt; 1,0 hektar luas lahan</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+              <tr><td>5</td><td>Sekolah / Universitas</td><td>&lt; 100 siswa</td><td>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tidakwajib-note">
+          <i class="fas fa-lightbulb"></i>
+          <p>Kegiatan yang tidak wajib Andalalin tetap dapat mengajukan <strong>Surat Permohonan Kriteria Wajib Andalalin</strong> yang ditujukan kepada Kepala Dinas Perhubungan Kabupaten Semarang. Untuk draft dan persyaratan dapat mengunduh di menu <a href="unduh.html" style="color:inherit;font-weight:700;text-decoration:underline;">Unduh Dokumen</a>.</p>
+        </div>
+        <div class="kriteria-cta">
+          <a href="pengajuan.html?form=tidakwajib" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Surat Keterangan</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bg-img">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="unduh.html"><i class="fas fa-chevron-right"></i> Unduh Dokumen</a></li>
+          <li><a href="kriteria.html"><i class="fas fa-chevron-right"></i> Kriteria Andalalin</a></li>
+          <li><a href="pengajuan.html"><i class="fas fa-chevron-right"></i> Pengajuan Andalalin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+        <p><i class="fab fa-whatsapp"></i> +62 815-4893-8862</p>
+        <p><i class="fab fa-instagram"></i> @dishubkabsemarang</p>
+        <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

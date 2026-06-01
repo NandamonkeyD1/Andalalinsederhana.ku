@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Generate Surat - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fab fa-whatsapp"></i> +62 815-4893-8862</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fab fa-instagram"></i> @dishubkabsemarang</span>
+    <span><i class="fas fa-clock"></i> Senin–Jumat: 08.00–16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header"><div class="header-inner"><div class="header-logo"><img src="banner.jpeg" alt="Dinas Perhubungan Kabupaten Semarang" class="header-banner-img"/></div></div></header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="unduh.html"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+      <li><a href="generate-surat.html" class="active"><i class="fas fa-file-pdf"></i> Generate Surat</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-file-pdf"></i> Generate Surat Permohonan</h1>
+      <p>Buat surat permohonan Andalalin secara otomatis dalam format PDF</p>
+    </div>
+  </div>
+
+  <section class="section-wrap">
+    <div class="container">
+
+      <!-- PILIH JENIS SURAT -->
+      <div class="simulasi-wrap">
+        <h3><i class="fas fa-file-signature"></i> Pilih Jenis Surat</h3>
+        <div class="sim-row">
+          <div class="simulasi-group">
+            <select id="jenis-surat" onchange="onJenisSuratChange()">
+              <option value="">-- Pilih Jenis Surat --</option>
+              <option value="rekomendasi">Surat Permohonan Rekomendasi Teknis (Bangkitan Tinggi)</option>
+              <option value="standar">Surat Permohonan Standar Teknis (Bangkitan Sedang/Rendah)</option>
+              <option value="tidakwajib">Surat Permohonan Tidak Wajib Andalalin</option>
+              <option value="kesanggupan">Surat Kesanggupan Melaksanakan Rekomendasi</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM ISI DATA SURAT -->
+      <div id="form-surat" class="ajuan-form" style="display:none;">
+
+        <div class="form-section-title"><i class="fas fa-building"></i> Data Perusahaan / Pemohon</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-building"></i> Nama Perusahaan / Pembangun <span class="req">*</span></label>
+            <input type="text" id="s-perusahaan" placeholder="Contoh: PT. Maju Jaya"/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Nama Pemohon <span class="req">*</span></label>
+            <input type="text" id="s-pemohon" placeholder="Nama lengkap pemohon"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-user-tie"></i> Jabatan</label>
+            <input type="text" id="s-jabatan" placeholder="Contoh: Direktur"/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Alamat Perusahaan</label>
+            <input type="text" id="s-alamat" placeholder="Alamat lengkap perusahaan"/>
+          </div>
+        </div>
+
+        <div class="form-section-title"><i class="fas fa-hammer"></i> Data Pembangunan</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-city"></i> Nama Objek Pembangunan <span class="req">*</span></label>
+            <input type="text" id="s-objek" placeholder="Contoh: Perumahan Griya Asri"/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-location-dot"></i> Lokasi Pembangunan <span class="req">*</span></label>
+            <input type="text" id="s-lokasi" placeholder="Jalan / RT / RW / Kelurahan / Kecamatan"/>
+          </div>
+        </div>
+
+        <div class="form-section-title"><i class="fas fa-calendar"></i> Data Surat</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-hashtag"></i> Nomor Surat</label>
+            <input type="text" id="s-nomor" placeholder="Contoh: 001/AND/V/2025"/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-calendar-days"></i> Tempat & Tanggal Surat</label>
+            <input type="text" id="s-tanggal" placeholder="Contoh: Semarang, 1 Juni 2025"/>
+          </div>
+        </div>
+
+        <!-- Khusus Rekomendasi Teknis -->
+        <div id="field-konsultan" style="display:none;">
+          <div class="form-section-title"><i class="fas fa-briefcase"></i> Data Konsultan</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-building"></i> Nama Konsultan Andalalin</label>
+              <input type="text" id="s-konsultan" placeholder="Contoh: PT. Konsultan Transportasi"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Generate -->
+        <div class="form-submit-area">
+          <button type="button" class="btn-submit" onclick="generatePDF()">
+            <i class="fas fa-file-pdf"></i> Generate Surat PDF
+          </button>
+          <p class="form-note"><i class="fas fa-circle-info"></i> Surat akan di-generate dalam format PDF sesuai template resmi.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bg-img">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="unduh.html"><i class="fas fa-chevron-right"></i> Unduh Dokumen</a></li>
+          <li><a href="kriteria.html"><i class="fas fa-chevron-right"></i> Kriteria Andalalin</a></li>
+          <li><a href="pengajuan.html"><i class="fas fa-chevron-right"></i> Pengajuan Andalalin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+        <p><i class="fab fa-whatsapp"></i> +62 815-4893-8862</p>
+        <p><i class="fab fa-instagram"></i> @dishubkabsemarang</p>
+        <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="generate-surat.js"></script>
+</body>
+</html>

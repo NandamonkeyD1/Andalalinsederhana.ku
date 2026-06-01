@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Beranda - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fab fa-whatsapp"></i> +62 815-4893-8862</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fab fa-instagram"></i> @dishubkabsemarang</span>
+    <span><i class="fas fa-clock"></i> Senin�Jumat: 08.00�16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header"><div class="header-inner"><div class="header-logo"><img src="banner.jpeg" alt="Dinas Perhubungan Kabupaten Semarang" class="header-banner-img"/></div></div></header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="unduh.html"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="hero-banner">
+    <div class="container hero-inner hero-inner-single">
+      <div class="hero-content">
+        <h1>Selamat Datang di Portal ANDALALIN</h1>
+        <h2>Dinas Perhubungan Kabupaten Semarang</h2>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas yang efektif, efisien, dan transparan untuk mendukung pembangunan berkelanjutan di Kabupaten Semarang.</p>
+        <div class="hero-buttons">
+          <a href="pengajuan.html" class="btn-primary"><i class="fas fa-file-alt"></i> Ajukan Sekarang</a>
+          <a href="kriteria.html" class="btn-outline"><i class="fas fa-info-circle"></i> Cek Kriteria</a>
+          <a href="https://www.youtube.com/watch?v=LINK_VIDEO_TUTORIAL" target="_blank" class="btn-outline"><i class="fab fa-youtube"></i> Tutorial Pengajuan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALUR PELAYANAN -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fas fa-sitemap"></i> Alur Pelayanan Pengajuan Andalalin</h2>
+        <p>Ikuti langkah-langkah berikut untuk mengajukan permohonan Andalalin</p>
+      </div>
+      <div class="alur-img-wrap">
+        <img src="alur andalalin.jpeg" alt="Alur Pelayanan Pengajuan Andalalin" class="alur-img"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="section-wrap bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fas fa-th-large"></i> Layanan Kami</h2>
+        <p>Pilih layanan yang sesuai dengan kebutuhan Anda</p>
+      </div>
+      <div class="layanan-grid">
+        <a href="pengajuan.html?form=tinggi" class="layanan-card">
+          <div class="layanan-icon icon-tinggi"><i class="fas fa-building"></i></div>
+          <h3>Bangkitan Tinggi</h3>
+          <p>Wajib menyusun Dokumen Andalalin sebelum memperoleh izin pembangunan</p>
+          <span class="layanan-badge badge-tinggi">Dokumen Andalalin</span>
+        </a>
+        <a href="pengajuan.html?form=sedang" class="layanan-card">
+          <div class="layanan-icon icon-sedang"><i class="fas fa-store"></i></div>
+          <h3>Bangkitan Sedang</h3>
+          <p>Wajib menyusun Rekomendasi Teknis sebelum memperoleh izin pembangunan</p>
+          <span class="layanan-badge badge-sedang">Rekomendasi Teknis</span>
+        </a>
+        <a href="pengajuan.html?form=rendah" class="layanan-card">
+          <div class="layanan-icon icon-rendah"><i class="fas fa-home"></i></div>
+          <h3>Bangkitan Rendah</h3>
+          <p>Wajib menyusun Standar Teknis sebelum memperoleh izin pembangunan</p>
+          <span class="layanan-badge badge-rendah">Standar Teknis</span>
+        </a>
+        <a href="pengajuan.html?form=tidakwajib" class="layanan-card">
+          <div class="layanan-icon icon-tidakwajib"><i class="fas fa-circle-info"></i></div>
+          <h3>Tidak Wajib Andalalin</h3>
+          <p>Dapat mengajukan Surat Permohonan Kriteria Wajib Andalalin kepada Kepala Dinas Perhubungan</p>
+          <span class="layanan-badge badge-tidakwajib">Surat Keterangan</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bg-img">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="unduh.html"><i class="fas fa-chevron-right"></i> Unduh Dokumen</a></li>
+          <li><a href="kriteria.html"><i class="fas fa-chevron-right"></i> Kriteria Andalalin</a></li>
+          <li><a href="pengajuan.html"><i class="fas fa-chevron-right"></i> Pengajuan Andalalin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+        <p><i class="fab fa-whatsapp"></i> +62 815-4893-8862</p>
+        <p><i class="fab fa-instagram"></i> @dishubkabsemarang</p>
+        <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

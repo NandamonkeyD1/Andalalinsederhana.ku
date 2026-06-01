@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Unduh Dokumen - Portal Andalalin Dishub Kab. Semarang</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span><i class="fab fa-whatsapp"></i> +62 815-4893-8862</span>
+    <span><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</span>
+    <span><i class="fab fa-instagram"></i> @dishubkabsemarang</span>
+    <span><i class="fas fa-clock"></i> Senin–Jumat: 08.00–16.00 WIB</span>
+  </div>
+</div>
+
+<header class="site-header"><div class="header-inner"><div class="header-logo"><img src="banner.jpeg" alt="Dinas Perhubungan Kabupaten Semarang" class="header-banner-img"/></div></div></header>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="unduh.html" class="active"><i class="fas fa-download"></i> Unduh Dokumen</a></li>
+      <li><a href="kriteria.html"><i class="fas fa-list-check"></i> Kriteria Andalalin</a></li>
+      <li><a href="pengajuan.html"><i class="fas fa-file-alt"></i> Pengajuan Andalalin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-download"></i> Unduh Dokumen</h1>
+      <p>Unduh template dokumen yang diperlukan untuk pengajuan Andalalin</p>
+    </div>
+  </div>
+
+  <section class="section-wrap">
+    <div class="container">
+      <div class="unduh-list">
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Template Surat Permohonan Andalalin (Tidak Wajib Andalalin)</h4>
+            <p>Template surat permohonan resmi untuk kegiatan yang tidak memenuhi ambang batas wajib Andalalin</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Template Surat Permohonan Andalalin (Bangkitan Rendah)</h4>
+            <p>Template surat permohonan resmi untuk kegiatan dengan kategori bangkitan rendah — wajib menyusun Standar Teknis</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Template Surat Permohonan Andalalin (Bangkitan Sedang)</h4>
+            <p>Template surat permohonan resmi untuk kegiatan dengan kategori bangkitan sedang — wajib menyusun Rekomendasi Teknis</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Template Surat Permohonan Andalalin (Bangkitan Tinggi)</h4>
+            <p>Template surat permohonan resmi untuk kegiatan dengan kategori bangkitan tinggi — wajib menyusun Dokumen Andalalin</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+        <div class="unduh-card">
+          <div class="unduh-icon icon-word"><i class="fas fa-file-word"></i></div>
+          <div class="unduh-info">
+            <h4>Surat Kesanggupan Melaksanakan Rekomendasi Andalalin</h4>
+            <p>Template surat kesanggupan yang wajib diisi pemohon setelah pembahasan tim penilai sebagai syarat penerbitan rekomendasi</p>
+            <span class="unduh-meta"><i class="fas fa-file"></i> DOCX</span>
+          </div>
+          <button class="btn-unduh" onclick="alertUnduh()"><i class="fas fa-download"></i> Unduh</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bg-img">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4><i class="fas fa-road"></i> Portal Andalalin</h4>
+        <p>Layanan pengajuan Analisis Dampak Lalu Lintas Dinas Perhubungan Kabupaten Semarang secara online.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="unduh.html"><i class="fas fa-chevron-right"></i> Unduh Dokumen</a></li>
+          <li><a href="kriteria.html"><i class="fas fa-chevron-right"></i> Kriteria Andalalin</a></li>
+          <li><a href="pengajuan.html"><i class="fas fa-chevron-right"></i> Pengajuan Andalalin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Kami</h4>
+        <p><i class="fas fa-envelope"></i> dishub@semarangkab.go.id</p>
+        <p><i class="fab fa-whatsapp"></i> +62 815-4893-8862</p>
+        <p><i class="fab fa-instagram"></i> @dishubkabsemarang</p>
+        <p><i class="fas fa-globe"></i> www.dishub.semarangkab.go.id</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dinas Perhubungan Kabupaten Semarang. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
